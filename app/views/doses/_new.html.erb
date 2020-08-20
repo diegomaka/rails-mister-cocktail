@@ -1,0 +1,8 @@
+<h3 class="mt-4">What is the recipe for <%= @cocktail.name %>?</h3>
+
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.submit class: 'btn btn-secondary' %>
+<% end %>

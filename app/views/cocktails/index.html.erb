@@ -1,0 +1,61 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= "Cocktail World" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Add New Cocktail", new_cocktail_path, class: "btn btn-ghost" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container mt-3">
+
+  <div class="row">
+    <div class="col-12">
+      <h1>Unforgettable, Contemporary and New Era.</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <p>All <%= @cocktails.count %> cocktails.</p>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-4">
+        <div class="flat-card">
+          <div class="flat-card-image" style="background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')"></div>
+          <div class="flat-card-content">
+            <div class="flat-card-title">
+              <h4><%= link_to cocktail.name, cocktail %></h4>
+            </div>  
+            <p><%= cocktail.name %></p>
+            <div class="flex">
+              <div class="flex">
+                <i class="fas fa-glass-martini-alt"></i><i class="fas fa-glass-martini-alt"></i>
+              </div>
+              <div class="flex ml-3">
+                <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>
+              </div>                        
+            </div>
+          </div>
+        </div>
+      </div>  
+    <% end %>
+
+  </div>
+
+
+</div>
